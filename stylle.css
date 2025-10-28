@@ -1,0 +1,104 @@
+/*
+ * style.css
+ * Estilos Mínimos Customizados para Nascimento Auto Peças (Foco no Bootstrap)
+ */
+
+/* 1. Reset e Padding da Navbar */
+body.body-offset {
+    font-family: 'Inter', sans-serif;
+    /* Ajuste para o padding superior, já que a navbar é fixa (56px é o padrão do Bootstrap) */
+    padding-top: 56px; 
+}
+
+/* 2. Hero Section (Banner) */
+#hero {
+    /* Mínimo necessário: background, altura, alinhamento e cor de texto */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagens/banner_principal.png') no-repeat center center;
+    background-size: cover;
+    min-height: 70vh; 
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Sombra no texto do Hero para contraste (efeito não nativo do Bootstrap) */
+.text-shadow-lg {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Diferenciais (Cards) */
+
+/* Efeito Hover nos Ícones: muda de Primary para Warning (Azul para Amarelo) */
+.feature-card .custom-feature-icon {
+    font-size: 3.5rem; 
+    transition: color 0.3s;
+}
+
+.feature-card:hover .custom-feature-icon {
+    /* Cor Warning do Bootstrap */
+    color: #ffc107 !important; 
+}
+
+/* 4. Produtos em Destaque (Cards) */
+
+/* Estilo para uniformizar a altura das imagens dos produtos */
+.custom-product-img {
+    height: 220px; 
+    object-fit: cover; /* Recorta para preencher o espaço */
+    border-bottom: 1px solid #eee;
+}
+
+/* Efeito Hover no Card (Elevação) */
+.product-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+    /* Sombra mais destacada: usando classes Bootstrap 'shadow-lg' para inspiração (0 1rem 3rem rgba(0,0,0,.175)) */
+    box-shadow: 0 10px 20px rgba(0,0,0,.15); 
+}
+
+/* 5. Galeria (Carrossel) */
+
+/* Estilo da GALERIA: Controle de altura e 'object-fit' para enquadramento */
+.custom-carousel-img {
+    height: 350px; 
+    object-fit: contain; /* CRUCIAL: Mantém a proporção, sem cortar a imagem */
+    background-color: rgb(255, 255, 255); 
+}
+
+/* Customização para esticar a legenda do carrossel (semelhante ao que o Bootstrap faz com classes internas) */
+.custom-caption-full-width {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 6. Botão Flutuante Voltar ao Topo */
+
+#scrollToTopBtn {
+    /* Posição e Display: Mínimo customizado (não há classe Bootstrap para fixed bottom-right) */
+    display: none; 
+    position: fixed;
+    bottom: 25px; 
+    right: 25px;
+    z-index: 100;
+    /* Redonda, com ícone e sem borda */
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    /* Usando cores e sombra definidas no HTML, mas garantindo que o círculo seja renderizado corretamente */
+    width: 60px; /* Largura e altura fixas para ser um círculo perfeito */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
